@@ -1,17 +1,60 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Mi Perfil
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Mi Perfil</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <div class="profile-container">
+    <!-- Tarjeta principal de perfil -->
+    <div class="profile-card">
+      <div class="avatar-wrapper">
+        <img 
+          src="https://avatars.githubusercontent.com/u/269591938?s=400&u=b674a0163f761fd082dafa9d1b57da1d64de9d7a&v=4" 
+          alt="Foto de perfil de Germán Aravena" 
+          class="avatar-img"
+        />
+      </div>
+
+      <h1 class="profile-name">Germán Aravena</h1>
+      <p class="profile-career">Estudiante de Ingeniería en Informática</p>
+      <p class="profile-university">Universidad de Los Lagos</p>
+
+      <p class="profile-bio">
+        Apasionado por el desarrollo de software, la tecnología y el aprendizaje de aplicaciones móviles con Ionic y Angular.
+      </p>
+
+      <!-- Habilidades / Intereses -->
+      <div class="skills-container">
+        <span class="skill-badge">Ionic</span>
+        <span class="skill-badge">Angular</span>
+        <span class="skill-badge">TypeScript</span>
+        <span class="skill-badge">Desarrollo Móvil</span>
+      </div>
+    </div>
+
+    <!-- Detalles adicionales -->
+    <div class="details-card">
+      <div class="detail-item">
+        <span class="detail-label">📚 Asignatura:</span>
+        <span class="detail-value">Aplicaciones Móviles</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">🐙 GitHub:</span>
+        <a href="https://github.com/Mnxx29" target="_blank" rel="noopener noreferrer" class="detail-link">Mnxx29</a>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">📍 Ubicación:</span>
+        <span class="detail-value">Región de Los Lagos, Chile</span>
+      </div>
+    </div>
+  </div>
 </ion-content>

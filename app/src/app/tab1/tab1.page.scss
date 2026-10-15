@@ -1,3 +1,4 @@
+/* Estilos correspondientes a Tab 1 (Página de Inicio) */
 .welcome-container {
   display: flex;
   flex-direction: column;
@@ -31,10 +32,10 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   object-fit: cover;
   transition: transform 0.3s ease;
+}
 
-  &:hover {
-    transform: scale(1.03);
-  }
+.welcome-img:hover {
+  transform: scale(1.03);
 }
 
 .explore-text {
