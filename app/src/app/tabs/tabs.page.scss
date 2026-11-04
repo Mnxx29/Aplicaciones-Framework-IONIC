@@ -8,3 +8,18 @@ ion-tab-button {
   --color-selected: var(--ion-color-primary, #3880ff);
   font-weight: 500;
 }
+
+/* Botón destacado para cerrar sesión */
+ion-tab-button.logout-tab-btn {
+  --color: #dc2626;
+  --color-hover: #b91c1c;
+
+  ion-icon {
+    color: #dc2626;
+  }
+
+  ion-label {
+    color: #dc2626;
+    font-weight: 600;
+  }
+}
