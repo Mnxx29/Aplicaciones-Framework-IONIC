@@ -1,32 +1,29 @@
 <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar color="primary">
-    <ion-title>Iniciar Sesión</ion-title>
+    <ion-title>Aura • Acceso</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="login-content">
   <div class="login-wrapper">
-    <!-- Encabezado / Logo visual -->
     <div class="login-header">
       <div class="logo-circle">
-        <ion-icon name="shield-checkmark-outline"></ion-icon>
+        <ion-icon name="heart-circle-outline"></ion-icon>
       </div>
-      <h1 class="login-title">Bienvenido</h1>
-      <p class="login-subtitle">Ingresa tus credenciales para acceder a la aplicación</p>
+      <h1 class="login-title">Aura</h1>
+      <p class="login-subtitle">Monitoreo y cuidado del adulto mayor</p>
     </div>
 
-    <!-- Formulario en tarjeta -->
     <ion-card class="login-card">
       <ion-card-content>
         <form (ngSubmit)="onLogin()" class="login-form">
-          <!-- Campo Usuario -->
           <div class="input-group">
-            <ion-label class="custom-label">Usuario</ion-label>
+            <ion-label class="custom-label">Usuario Cuidador</ion-label>
             <ion-item lines="none" class="custom-item">
               <ion-icon name="person-outline" slot="start" class="field-icon"></ion-icon>
               <ion-input
                 type="text"
-                placeholder="Ingresa tu usuario"
+                placeholder="Ej. admin"
                 [(ngModel)]="username"
                 name="username"
                 [clearInput]="true"
@@ -37,14 +34,13 @@
             </ion-item>
           </div>
 
-          <!-- Campo Contraseña -->
           <div class="input-group">
             <ion-label class="custom-label">Contraseña</ion-label>
             <ion-item lines="none" class="custom-item">
               <ion-icon name="lock-closed-outline" slot="start" class="field-icon"></ion-icon>
               <ion-input
                 [type]="showPassword ? 'text' : 'password'"
-                placeholder="Ingresa tu contraseña"
+                placeholder="••••"
                 [(ngModel)]="password"
                 name="password"
                 autocomplete="current-password"
@@ -56,7 +52,6 @@
                 class="password-toggle-btn"
                 (click)="toggleShowPassword()"
                 type="button"
-                aria-label="Mostrar u ocultar contraseña"
               >
                 <ion-icon
                   slot="icon-only"
@@ -66,7 +61,6 @@
             </ion-item>
           </div>
 
-          <!-- Mensaje de error si falla la validación -->
           @if (errorMessage) {
             <div class="error-banner">
               <ion-icon name="alert-circle-outline"></ion-icon>
@@ -74,7 +68,6 @@
             </div>
           }
 
-          <!-- Botón de Iniciar Sesión -->
           <ion-button
             expand="block"
             shape="round"
@@ -84,29 +77,18 @@
           >
             @if (isLoading) {
               <ion-spinner name="crescent" slot="start"></ion-spinner>
-              <span>Iniciando sesión...</span>
+              <span>Ingresando...</span>
             } @else {
               <ion-icon name="log-in-outline" slot="start"></ion-icon>
-              <span>Iniciar Sesión</span>
+              <span>Entrar a Aura</span>
             }
           </ion-button>
         </form>
 
-        <!-- Tarjeta de credenciales de prueba requeridas -->
         <div class="demo-box">
-          <div class="demo-header">
-            <ion-icon name="sparkles-outline"></ion-icon>
-            <span class="demo-title">Credenciales requeridas</span>
-          </div>
           <div class="demo-credentials">
-            <div class="credential-item">
-              <span class="badge-label">Usuario:</span>
-              <strong class="badge-value">{{ defaultUser }}</strong>
-            </div>
-            <div class="credential-item">
-              <span class="badge-label">Clave:</span>
-              <strong class="badge-value">{{ defaultPass }}</strong>
-            </div>
+            <span>Usuario: <strong>{{ defaultUser }}</strong></span>
+            <span>Clave: <strong>{{ defaultPass }}</strong></span>
           </div>
           <ion-button
             fill="clear"
@@ -115,7 +97,7 @@
             (click)="fillDemoCredentials()"
             type="button"
           >
-            Autocompletar credenciales
+            Autocompletar acceso
           </ion-button>
         </div>
       </ion-card-content>

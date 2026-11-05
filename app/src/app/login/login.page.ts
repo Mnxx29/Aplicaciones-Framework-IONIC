@@ -25,8 +25,7 @@ import {
   eyeOffOutline,
   logInOutline,
   alertCircleOutline,
-  shieldCheckmarkOutline,
-  sparklesOutline,
+  heartCircleOutline,
 } from 'ionicons/icons';
 import { AuthService } from '../services/auth';
 import { ADMIN_USER, ADMIN_PASS } from '../guards/auth-guard';
@@ -74,8 +73,7 @@ export class LoginPage implements OnInit {
       eyeOffOutline,
       logInOutline,
       alertCircleOutline,
-      shieldCheckmarkOutline,
-      sparklesOutline,
+      heartCircleOutline,
     });
   }
 

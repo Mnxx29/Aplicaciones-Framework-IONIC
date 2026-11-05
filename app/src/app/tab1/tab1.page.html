@@ -1,29 +1,82 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Página de Inicio
-    </ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Aura • Monitoreo</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Página de Inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div class="welcome-container">
-    <h1 class="welcome-title">Bienvenido a mi página</h1>
-
-    <div class="image-wrapper">
-      <img 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeScKfZIFhP5UGZguS-JC5fYycP-glMjpYsIHnkptL24-IaFKc_m76cvI&s=10" 
-        alt="Imagen de bienvenida" 
-        class="welcome-img"
-      />
+<ion-content [fullscreen]="true" class="aura-content">
+  <div class="page-container">
+    <!-- Estado del dispositivo del adulto mayor -->
+    <div class="status-pill">
+      <ion-icon name="radio-outline"></ion-icon>
+      <span>Pulsera de <strong>Carlos Mendoza</strong> activa</span>
     </div>
 
-    <p class="explore-text">Explora nuestras ventanas</p>
+    <!-- Botón SOS principal -->
+    <div class="sos-section">
+      <button class="sos-circle-btn" (click)="triggerSOS()" type="button">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+        <span class="sos-title">SOS</span>
+        <span class="sos-caption">Avisar a Cuidador</span>
+      </button>
+    </div>
+
+    <!-- Tarjetas de sensores simulados -->
+    <div class="sensors-grid">
+      <!-- Sensor de Caídas -->
+      <ion-card class="sensor-card" [class.alert-active]="fallDetected">
+        <ion-card-content>
+          <div class="sensor-header">
+            <div class="sensor-icon">
+              <ion-icon name="body-outline"></ion-icon>
+            </div>
+            <div class="sensor-info">
+              <h3>Detector de Caídas</h3>
+              <p>{{ fallDetected ? '¡Caída brusca detectada!' : 'Postura y movimiento normal' }}</p>
+            </div>
+            <ion-badge [color]="fallDetected ? 'danger' : 'success'">
+              {{ fallDetected ? 'Alerta' : 'Estable' }}
+            </ion-badge>
+          </div>
+          <ion-button
+            size="small"
+            fill="outline"
+            [color]="fallDetected ? 'medium' : 'primary'"
+            (click)="toggleFallSimulation()"
+          >
+            {{ fallDetected ? 'Restablecer estado' : 'Simular caída brusca' }}
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Ritmo Cardíaco (Simulado de dispositivo) -->
+      <ion-card class="sensor-card" [class.warning-active]="heartAnomaly">
+        <ion-card-content>
+          <div class="sensor-header">
+            <div class="sensor-icon heart">
+              <ion-icon name="heart-outline"></ion-icon>
+            </div>
+            <div class="sensor-info">
+              <h3>Pulso (Pulsera Aura)</h3>
+              <p class="bpm-value">{{ heartRate }} <span>BPM</span></p>
+            </div>
+            <ion-badge [color]="heartAnomaly ? 'warning' : 'success'">
+              {{ heartAnomaly ? 'Anomalía' : 'Normal' }}
+            </ion-badge>
+          </div>
+          <ion-button
+            size="small"
+            fill="outline"
+            [color]="heartAnomaly ? 'medium' : 'primary'"
+            (click)="toggleHeartAnomaly()"
+          >
+            {{ heartAnomaly ? 'Normalizar pulso' : 'Simular anomalía cardíaca' }}
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
 </ion-content>

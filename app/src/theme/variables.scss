@@ -1,2 +1,33 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+:root {
+  /* Paleta cálida tonos marrón y crema para Aura */
+  --ion-color-primary: #7c5238;
+  --ion-color-primary-rgb: 124, 82, 56;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #6d4831;
+  --ion-color-primary-tint: #89634c;
+
+  --ion-color-secondary: #a67c52;
+  --ion-color-secondary-rgb: 166, 124, 82;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #926d48;
+  --ion-color-secondary-tint: #af8963;
+
+  --ion-color-success: #4d7c5b;
+  --ion-color-warning: #c88a32;
+  --ion-color-danger: #c04838;
+
+  --ion-background-color: #faf5ee;
+  --ion-background-color-rgb: 250, 245, 238;
+  --ion-text-color: #3d281c;
+  --ion-text-color-rgb: 61, 40, 28;
+
+  --ion-card-background: #ffffff;
+  --ion-item-background: #ffffff;
+  --ion-toolbar-background: #7c5238;
+  --ion-toolbar-color: #fffaf4;
+  --ion-tab-bar-background: #f3eadf;
+  --ion-tab-bar-color: #8c705f;
+  --ion-tab-bar-color-selected: #6b4228;
+}

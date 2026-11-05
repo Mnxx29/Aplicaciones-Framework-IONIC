@@ -1,74 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Galería
-    </ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Aura • Alertas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Galería</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="aura-content">
+  <div class="page-container">
+    <p class="section-subtitle">Eventos recientes enviados a cuidadores</p>
 
-  <div class="gallery-header">
-    <h1 class="gallery-title">Bienvenido a la Galería</h1>
-    <p class="gallery-subtitle">Explora nuestro contenido:</p>
-  </div>
-
-  <div class="gallery-grid">
-    <!-- Item 1: Inteligencia Artificial -->
-    <div class="gallery-card">
-      <div class="card-image-box">
-        <img 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnXI0y5rRACaew5CMXSf90ozkb6r4UeGTch2lAqGzr0h__8BxVHE_un2zw&s=10" 
-          alt="Inteligencia artificial" 
-        />
-      </div>
-      <div class="card-info">
-        <h3>Inteligencia artificial</h3>
-      </div>
-    </div>
-
-    <!-- Item 2: Data Science -->
-    <div class="gallery-card">
-      <div class="card-image-box">
-        <img 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbdPHJgBhRfEBBy4EqjEaX9HNGpt_wzLdxV8-VpJG63on8y-bDVEIxHDAD&s=10" 
-          alt="Data science" 
-        />
-      </div>
-      <div class="card-info">
-        <h3>Data science</h3>
-      </div>
-    </div>
-
-    <!-- Item 3: Aplicaciones Móviles -->
-    <div class="gallery-card">
-      <div class="card-image-box">
-        <img 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9ngBopqScJ6SJMYxOf2852R2sN_D1AiJ0C7GoWrV0zw&s=10" 
-          alt="Aplicaciones móviles" 
-        />
-      </div>
-      <div class="card-info">
-        <h3>Aplicaciones móviles</h3>
-      </div>
-    </div>
-
-    <!-- Item 4: Redes de Informática -->
-    <div class="gallery-card">
-      <div class="card-image-box">
-        <img 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLE3u2VMehV-0V1RTUtesdd7f5yNZhyPaVU31TlfHss_-0MTKo4zTsM8pX&s=10" 
-          alt="Redes de informática" 
-        />
-      </div>
-      <div class="card-info">
-        <h3>Redes de informática</h3>
-      </div>
+    <div class="alerts-list">
+      @for (item of alerts; track item.id) {
+        <ion-card
+          class="alert-card"
+          [class.is-resolved]="item.resolved"
+          (click)="toggleResolved(item)"
+        >
+          <ion-card-content>
+            <div class="alert-row">
+              <div class="alert-icon" [class]="item.level">
+                <ion-icon [name]="item.icon"></ion-icon>
+              </div>
+              <div class="alert-body">
+                <div class="alert-top">
+                  <h3>{{ item.title }}</h3>
+                  <ion-badge [color]="item.resolved ? 'success' : item.level">
+                    {{ item.resolved ? 'Atendida' : 'Nueva' }}
+                  </ion-badge>
+                </div>
+                <p class="alert-detail">{{ item.detail }}</p>
+                <span class="alert-time">{{ item.time }} • Toca para cambiar estado</span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      }
     </div>
   </div>
 </ion-content>
