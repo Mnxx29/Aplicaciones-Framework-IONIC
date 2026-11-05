@@ -17,6 +17,9 @@ import {
   heartOutline,
   alertCircleOutline,
   checkmarkDoneOutline,
+  shieldCheckmarkOutline,
+  notificationsOutline,
+  watchOutline,
 } from 'ionicons/icons';
 
 interface AuraAlert {
@@ -47,6 +50,19 @@ interface AuraAlert {
   ],
 })
 export class Tab2Page {
+  features = [
+    {
+      icon: 'watch-outline',
+      title: 'Monitoreo con Pulsera Aura',
+      desc: 'Detecta caídas bruscas y anomalías de pulso en tiempo real.',
+    },
+    {
+      icon: 'notifications-outline',
+      title: 'Aviso Inmediato a Cuidadores',
+      desc: 'Envía alertas automáticas y botón SOS a familiares y médicos.',
+    },
+  ];
+
   alerts: AuraAlert[] = [
     {
       id: 1,
@@ -83,6 +99,9 @@ export class Tab2Page {
       heartOutline,
       alertCircleOutline,
       checkmarkDoneOutline,
+      shieldCheckmarkOutline,
+      notificationsOutline,
+      watchOutline,
     });
   }
 

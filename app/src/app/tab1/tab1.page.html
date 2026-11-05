@@ -3,16 +3,22 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Aura • Monitoreo</ion-title>
+    <ion-title>Aura • Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="aura-content">
   <div class="page-container">
-    <!-- Estado del dispositivo del adulto mayor -->
-    <div class="status-pill">
-      <ion-icon name="radio-outline"></ion-icon>
-      <span>Pulsera de <strong>Carlos Mendoza</strong> activa</span>
+    <!-- Tarjeta de Bienvenida (Requerimiento: Nombre de la app, bienvenida y contenido) -->
+    <div class="welcome-banner">
+      <div class="welcome-text">
+        <h2>¡Bienvenido a Aura!</h2>
+        <p>Asistencia y monitoreo preventivo para el adulto mayor</p>
+      </div>
+      <div class="status-pill">
+        <ion-icon name="radio-outline"></ion-icon>
+        <span>Pulsera de <strong>Carlos Mendoza</strong> activa</span>
+      </div>
     </div>
 
     <!-- Botón SOS principal -->

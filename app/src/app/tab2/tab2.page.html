@@ -3,13 +3,39 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Aura • Alertas</ion-title>
+    <ion-title>Aura • Servicios y Alertas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="aura-content">
   <div class="page-container">
-    <p class="section-subtitle">Eventos recientes enviados a cuidadores</p>
+    <!-- Bloque de Descripción del Propósito y Características (Requerimiento 3 de la rúbrica) -->
+    <ion-card class="purpose-card">
+      <ion-card-content>
+        <div class="purpose-header">
+          <ion-icon name="shield-checkmark-outline"></ion-icon>
+          <div>
+            <h2>¿Qué es Aura?</h2>
+            <p>
+              Sistema diseñado para proteger al adulto mayor, detectando emergencias y conectándolo con sus cuidadores.
+            </p>
+          </div>
+        </div>
+
+        <div class="features-list">
+          @for (f of features; track f.title) {
+            <div class="feature-item">
+              <ion-icon [name]="f.icon"></ion-icon>
+              <div>
+                <strong>{{ f.title }}:</strong> {{ f.desc }}
+              </div>
+            </div>
+          }
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <p class="section-subtitle">Registro de Eventos Detectados</p>
 
     <div class="alerts-list">
       @for (item of alerts; track item.id) {
